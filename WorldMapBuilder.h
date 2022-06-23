@@ -3,6 +3,9 @@
 
 #include "WorldMap.h"
 
+const int x = 10;
+const int y = 10;
+
 class CountryWithoutNeighboursException : exception{
 private:
     string country;
@@ -19,7 +22,7 @@ public:
 class WorldMapBuilder {
 private:
     vector<string> country_names;
-    string grid[10][10]; 
+    string grid[x][y]; 
 public:
     WorldMapBuilder()
     {
