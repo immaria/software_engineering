@@ -5,6 +5,8 @@
 
 using namespace std;
 
+const int representative_part = 1000;
+
 class City {
 private:
     string country;
@@ -38,7 +40,7 @@ public:
     {
         for(int i = 0;i < coins.size();i++)
         {
-            int send_value = coins[i] / 1000;
+            int send_value = coins[i] / representative_part;
 
             for(int j = 0;j < neighbours.size();j++)
             {
