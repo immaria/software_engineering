@@ -75,13 +75,10 @@ public:
 
     bool is_has_foreign_neighbours()
     {
-        for(int i=0;i<neighbours.size();i++)
-        {
-            if(neighbours[i]->country != country)
-                return true;
-        }
-
-        return false;
+        string c = country;
+        return any_of(neighbours.begin(), neighbours.end(), [c](City* x){
+            return x->country != c;
+        });
     }
 };
 
