@@ -68,14 +68,9 @@ public:
 
     bool is_has_all_coins_types()
     {
-        for(int i=0;i<coins.size();i++)
-        {
-            if(coins[i] == 0) {
-                return false;
-            }
-        }
-
-        return true;
+        return all_of(cities.begin(), cities.end(), [](City* city){
+            return city->is_has_foreign_neighbours();
+        });
     }
 
     bool is_has_foreign_neighbours()
