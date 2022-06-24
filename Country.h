@@ -63,13 +63,9 @@ public:
 
     bool is_has_foreign_neighbours()
     {
-        for(int i=0;i<cities.size();i++)
-        {
-            if(cities[i]->is_has_foreign_neighbours())
-                return true;
-        }
-
-        return false;
+        return any_of(cities.begin(), cities.end(), [](City* city){
+            return city->is_has_foreign_neighbours();
+        });
     }
 };
 
