@@ -25,9 +25,11 @@ public:
 
     void add_country(Country* country)
     {
+        if(country == nullptr)
+            return;
+
         countries.push_back(country);
     }
-
 
     vector<pair<string, int>> emulate()
     {
